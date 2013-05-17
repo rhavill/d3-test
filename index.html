@@ -12,7 +12,14 @@
                 .data(dataset)
                 .enter()
                 .append("p")
-                .text("New paragraph!");
+                .text(function(x) { return x; })
+                .style("color", function(d) {
+                    if (d > 15) {   //Threshold of 15
+                        return "red";
+                    } else {
+                        return "black";
+                    }
+                });
         </script>
     </body>
 </html>
